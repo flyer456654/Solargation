@@ -1,9 +1,8 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=$HOME/public_html/
-    - /bin/mkdir -p $DEPLOYPATH
-    - /bin/mkdir -p $DEPLOYPATH/assets
+    - export DEPLOYPATH=$HOME/public_html/solargation.com/
+    - /bin/cp -R assets $DEPLOYPATH
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp contact.html $DEPLOYPATH
     - /bin/cp energy.html $DEPLOYPATH
@@ -11,5 +10,4 @@ deployment:
     - /bin/cp landyield.html $DEPLOYPATH
     - /bin/cp wateruse.html $DEPLOYPATH
     - /bin/cp news.html $DEPLOYPATH
-    - /bin/cp -R assets/* $DEPLOYPATH/assets/
     - /bin/cp .htaccess $DEPLOYPATH
