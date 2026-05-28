@@ -1,42 +1,61 @@
-# Solargation Combined Website
+# Solargation Website
 
-This package is ready to upload into a GitHub repository or open locally.
-
-## Structure
-
-- `index.html` — main Solargation landing page
-- `landuse.html` — agricultural land-use comparison page
-- `wateruse.html` — water-use comparison page
-- `energy.html` — LCOE / energy-cost comparison page
-- `landyield.html` — agricultural yield-impact comparison page
-- `assets/` and each page-specific `assets/` folder — images, icons, and source infographic files
-
-## GitHub Pages
-
-1. Unzip this package.
-2. Copy the full contents into your GitHub repository folder.
-3. Commit and push.
-4. In GitHub, open Settings → Pages and publish from the main branch root folder.
-
-The site uses static HTML/CSS only and does not require a build step.
-
-## Contact page
-
-A static GitHub Pages-compatible contact page is included at `contact.html`. The form uses a `mailto:` workflow addressed to `info@phoebusfund.com`, which opens the visitor's email application with the completed message for review and sending. For server-side form submission, connect the form to a service such as Formspree, Netlify Forms, or a custom backend.
-
-
-## GitHub Pages Notes
-
-This corrected package keeps all six HTML pages in the repository root for simple GitHub Pages publishing. Main entry point: `index.html`. Navigation targets: `contact.html`, `energy.html`, `landuse.html`, `landyield.html`, and `wateruse.html`.
-
+Static HTML website prepared for deployment through a Git repository in cPanel.
 
 ## Pages
-- index.html
-- contact.html
-- energy.html
-- landuse.html
-- landyield.html
-- wateruse.html
-- news.html
 
-The News page includes the T-Mobile/Phoebus Puerto Rico announcement and is linked in the site header.
+- `index.html`
+- `contact.html`
+- `energy.html`
+- `landuse.html`
+- `landyield.html`
+- `wateruse.html`
+- `news.html`
+
+## Required cPanel deployment file
+
+This repository includes a valid `.cpanel.yml` file at the repository root. cPanel Git Version Control requires this file in the top-level directory of the repository before the **Deploy HEAD Commit** workflow will run.
+
+The included deployment file copies the website into:
+
+```bash
+$HOME/public_html/
+```
+
+That is the standard primary-domain web root for many cPanel accounts.
+
+## Important deployment note
+
+If this repository is being deployed to an addon domain or subdomain, update the first deployment task in `.cpanel.yml` before committing:
+
+```yaml
+- export DEPLOYPATH=$HOME/public_html/
+```
+
+Examples:
+
+```yaml
+- export DEPLOYPATH=$HOME/example.com/
+```
+
+or
+
+```yaml
+- export DEPLOYPATH=$HOME/public_html/example-subdomain/
+```
+
+Use the exact document root shown in cPanel for that domain.
+
+## cPanel Git deployment steps
+
+1. Upload or push this folder as the root of your GitHub repository.
+2. Confirm `.cpanel.yml` is committed at the repository root.
+3. In cPanel, open **Git Version Control**.
+4. Clone or connect the GitHub repository.
+5. Pull the latest branch if needed.
+6. Click **Deploy HEAD Commit**.
+7. Confirm the files appear in the target `DEPLOYPATH` directory.
+
+## Contact form limitation
+
+This is a static website. The contact form opens the visitor's email client with a prepared message to `info@phoebusfund.com`. To send email silently from the website, connect the form to a backend or a third-party form service.
