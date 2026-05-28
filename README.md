@@ -1,4 +1,4 @@
-# Solargation Website
+# Solargation® Website
 
 Static HTML website prepared for deployment through a Git repository in cPanel.
 
@@ -8,7 +8,7 @@ Static HTML website prepared for deployment through a Git repository in cPanel.
 - `contact.html`
 - `energy.html`
 - `landuse.html`
-- `landyield.html`
+- `crops.html`
 - `wateruse.html`
 - `news.html`
 

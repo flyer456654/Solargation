@@ -1,12 +1,13 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=$HOME/public_html/solargation.com/
+    - export DEPLOYPATH=$HOME/public_html/website_18ed1161/
     - /bin/cp -R assets $DEPLOYPATH
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp contact.html $DEPLOYPATH
     - /bin/cp energy.html $DEPLOYPATH
     - /bin/cp landuse.html $DEPLOYPATH
+    - /bin/cp crops.html $DEPLOYPATH
     - /bin/cp landyield.html $DEPLOYPATH
     - /bin/cp wateruse.html $DEPLOYPATH
     - /bin/cp news.html $DEPLOYPATH
