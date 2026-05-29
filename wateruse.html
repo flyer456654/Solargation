@@ -1,50 +1,1425 @@
 <!DOCTYPE html>
-
 <html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="A Solargation® water-use comparison showing representative operational water consumption for diesel, natural gas, traditional solar PV, and agricultural water-conserving Solargation®." name="description"/>
-<title>Solargation® | Water Use Comparison</title>
-<style>
-    :root{--navy:#061f3c;--navy-2:#0a2a4e;--deep:#041526;--green:#69b34c;--green-2:#0f6b42;--gold:#f6c53d;--amber:#d89400;--sky:#2aa7df;--blue:#0f55a2;--ice:#e9f4f8;--white:#fff;--muted:#617487;--line:#dce8ef;--max:1180px;--radius:28px;--shadow:0 26px 70px rgba(4,21,38,.18);--soft:0 14px 36px rgba(4,21,38,.10);--h1:clamp(2.55rem,7vw,6.1rem);--h2:clamp(2rem,4vw,4.15rem);--h3:clamp(1.18rem,2vw,1.7rem);--p:clamp(1rem,1.25vw,1.18rem);--small:clamp(.83rem,1vw,.96rem)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--deep);background:#f8fbfc;line-height:1.55;overflow-x:hidden}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}.wrap{width:min(calc(100% - 40px),var(--max));margin-inline:auto}.eyebrow{display:inline-flex;gap:1.5rem;align-items:center;text-transform:uppercase;letter-spacing:.16em;font-size:var(--small);font-weight:800;color:var(--green-2)}.eyebrow:before{content:"";width:10px;height:10px;background:var(--sky);border-radius:2px;box-shadow:14px 0 0 var(--green)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:1rem 1.25rem;border-radius:999px;font-weight:800;letter-spacing:.01em;transition:transform .22s ease,box-shadow .22s ease,background .22s ease;min-height:48px}.btn:hover{transform:translateY(-2px)}.btn-primary{background:linear-gradient(135deg,var(--gold),#ffe28a);color:#09213a;box-shadow:0 16px 34px rgba(246,197,61,.28)}.btn-secondary{border:1px solid rgba(255,255,255,.35);color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(10px)}.site-header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(6,31,60,.78);border-bottom:1px solid rgba(255,255,255,.10);backdrop-filter:blur(16px)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{display:flex;align-items:center;gap:.8rem;color:#fff;font-weight:900;letter-spacing:.02em}.brand img{width:42px;height:42px;object-fit:contain}.brand small{display:block;color:#b9d4e6;font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}.nav-links{display:flex;align-items:center;gap:1.1rem;color:#d8e7f0;font-weight:750;font-size:.94rem}.nav-links a{opacity:.9}.nav-links a:hover{opacity:1;color:var(--gold)}.nav-links a[aria-current="page"]{opacity:1;color:var(--gold)}section{padding:clamp(64px,8vw,120px) 0}.section-title{font-size:var(--h2);line-height:.98;letter-spacing:-.055em;margin:.55rem 0 1rem;color:var(--navy)}.lead{font-size:clamp(1.08rem,1.5vw,1.36rem);color:#375064;max-width:820px}.hero{min-height:100svh;position:relative;display:grid;place-items:center;color:#fff;background:var(--navy);padding:130px 0 74px}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(4,21,38,.96) 0%,rgba(4,21,38,.78) 42%,rgba(4,21,38,.22) 100%),linear-gradient(0deg,rgba(4,21,38,.86) 0%,rgba(4,21,38,.10) 48%,rgba(4,21,38,.22) 100%),url('assets/hero-1600.webp');background-size:cover;background-position:center}.hero:after{content:"";position:absolute;inset:auto -20% -22% -20%;height:38%;background:radial-gradient(ellipse at center,rgba(42,167,223,.26),transparent 65%)}.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:clamp(2rem,6vw,6rem);align-items:center}.hero h1{font-size:var(--h1);line-height:.91;margin:.8rem 0 1.2rem;letter-spacing:-.07em}.hero h1 span{display:block;color:var(--gold)}.hero p{font-size:clamp(1.05rem,1.7vw,1.45rem);max-width:760px;color:#e9f4f8;margin:0 0 1.7rem}.hero-actions{display:flex;gap:.85rem;flex-wrap:wrap}.hero-panel{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);backdrop-filter:blur(18px);box-shadow:0 34px 90px rgba(0,0,0,.28);overflow:hidden}.hero-panel-top{padding:1.2rem 1.2rem .35rem;display:flex;align-items:center;justify-content:space-between}.hero-panel-top img{width:70px}.status{display:flex;align-items:center;gap:.5rem;color:#dff3e6;font-weight:800;font-size:.86rem}.status i{display:block;width:10px;height:10px;background:var(--green);border-radius:50%;box-shadow:0 0 0 6px rgba(105,179,76,.18)}.metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.10);margin-top:1rem}.metric{padding:1.1rem;background:rgba(6,31,60,.48)}.metric b{display:block;font-size:clamp(1.7rem,4vw,3.2rem);line-height:1;color:#fff;letter-spacing:-.05em}.metric span{display:block;color:#c6d8e6;font-size:.88rem;margin-top:.4rem}.benchmark{position:relative;z-index:1;background:#fff;border-bottom:1px solid var(--line)}.formula-card{display:grid;grid-template-columns:72px 1fr;gap:1.2rem;align-items:center;padding:1.3rem;border-radius:26px;background:linear-gradient(180deg,#f7fbfd,#fff);border:1px solid #d7e8f0;box-shadow:var(--soft)}.info-icon{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#fff;font-weight:950;font-size:2rem}.formula-card p{margin:.15rem 0;color:#243b50;font-size:clamp(1rem,1.4vw,1.25rem)}.formula-card strong{color:var(--navy)}.comparison{background:#fff}.comparison-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:1.2rem;align-items:start;margin-top:2rem}.cards{display:grid;gap:1rem}.land-card{display:grid;grid-template-columns:72px 1fr minmax(180px,260px);gap:1.1rem;align-items:center;padding:1rem;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--soft);position:relative;overflow:hidden}.land-card:before{content:"";position:absolute;inset:0 auto 0 0;width:7px;background:var(--blue)}.land-card.gold:before{background:var(--amber)}.land-card.green:before{background:var(--green-2)}.land-card .rank{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:950;font-size:1.25rem;background:var(--blue);box-shadow:0 12px 26px rgba(15,85,162,.22)}.land-card.gold .rank{background:var(--amber)}.land-card.green .rank{background:var(--green-2)}.land-text h3{margin:0 0 .4rem;font-size:var(--h3);color:var(--navy);line-height:1.1}.land-card.gold h3{color:var(--amber)}.land-card.green h3{color:var(--green-2)}.land-text p{margin:.2rem 0;color:#445e70}.result{padding:1rem;border-radius:20px;background:linear-gradient(180deg,#f5f9fc,#fff);border:1px solid #dce8ef;text-align:center}.result b{display:block;font-size:clamp(2rem,4vw,3.7rem);line-height:.94;letter-spacing:-.06em;color:var(--blue)}.land-card.gold .result b{color:var(--amber)}.land-card.green .result b{color:var(--green-2)}.result span{font-weight:900;color:#344c5e}.gain-badge{display:inline-flex;margin-top:.55rem;padding:.38rem .65rem;border-radius:999px;background:var(--green-2);color:#fff;font-weight:900;font-size:.86rem}.assumptions{position:sticky;top:92px;background:linear-gradient(180deg,var(--navy),#0d3a68);color:#fff;border-radius:24px;box-shadow:var(--shadow);overflow:hidden}.assumptions h3{margin:0;padding:1.1rem 1.15rem;background:rgba(255,255,255,.08);font-size:1.2rem}.assumptions ul{margin:0;padding:1.15rem 1.25rem 1.35rem 2.1rem;display:grid;gap:.95rem}.assumptions li{color:#e5f0f6}.meaning{background:linear-gradient(180deg,#f8fbfc,#fff)}.meaning-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}.meaning-card{padding:1.45rem;border-radius:26px;background:#fff;border:1px solid var(--line);box-shadow:var(--soft)}.meaning-card h3{margin:.2rem 0 .65rem;color:var(--navy);font-size:var(--h3)}.meaning-card p,.meaning-card li{color:#4d6476}.meaning-card ul{margin:.5rem 0 0;padding-left:1.15rem}.note{border-color:#f5d889;background:linear-gradient(180deg,#fffdf5,#fff)}.source{background:#f8fbfc}.source-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,5rem);align-items:center}.image-stack{position:relative}.image-stack .main-img{border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover}.float-card{position:absolute;right:-22px;bottom:26px;width:min(360px,76%);padding:1.15rem;border-radius:22px;background:#fff;box-shadow:var(--shadow);border:1px solid #e3edf2}.float-card b{display:block;color:var(--navy);font-size:1.1rem}.float-card span{color:var(--muted);font-size:.95rem}.density{background:linear-gradient(135deg,var(--navy),#123e65);border-radius:34px;padding:clamp(2rem,5vw,4rem);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;margin-top:2.3rem;overflow:hidden;position:relative}.density:after{content:"";position:absolute;right:-120px;top:-120px;width:320px;height:320px;border-radius:50%;background:rgba(42,167,223,.20)}.density h2{font-size:clamp(2rem,4.5vw,4.4rem);line-height:.98;margin:0}.density p{font-size:1.08rem;color:#dcecf2}.density-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1rem;position:relative;z-index:1}.density-metric{padding:1.35rem;border-radius:24px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16)}.density-metric b{display:block;font-size:clamp(2.1rem,5vw,4.8rem);line-height:1;color:var(--gold)}.density-metric span{color:#d7e5ed;font-weight:760}.cta{position:relative;color:#fff;background:var(--deep);overflow:hidden;padding:clamp(70px,9vw,132px) 0}.cta:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,21,38,.92),rgba(4,21,38,.58)),url('assets/afternoon-1600.webp') center/cover no-repeat}.cta .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr .8fr;gap:2rem;align-items:center}.cta h2{font-size:var(--h2);line-height:.98;letter-spacing:-.055em;margin:.6rem 0 1rem}.cta p{font-size:clamp(1.03rem,1.4vw,1.22rem);color:#e6eff4;max-width:720px}.next-card{padding:1.45rem;border-radius:26px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(14px)}.next-card ul{margin:0;padding-left:1.15rem;display:grid;gap:.8rem;color:#edf5f8}.sources-list{font-size:1rem;color:#425c6d}.site-footer{padding:1.15rem 0;background:#03111e;color:#b6cad9;font-size:.9rem}.footer-inner{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}.footer-inner strong{color:#fff}.source-note{font-size:.94rem;color:#536b7c}.highlight{color:var(--gold);font-weight:900}
-    @media(max-width:1100px){.hero-inner,.source-grid,.cta .wrap,.density,.comparison-grid,.meaning-grid{grid-template-columns:1fr}.assumptions{position:relative;top:auto}.cta .wrap{gap:1.35rem}.density-metrics{grid-template-columns:1fr 1fr}}
-    @media(max-width:780px){.nav{height:auto;padding:14px 0;align-items:flex-start}.nav-links{flex-wrap:wrap;justify-content:flex-end}.hero{padding-top:150px}.hero-panel{margin-top:1rem}.metric-grid,.density-metrics{grid-template-columns:1fr 1fr}.land-card{grid-template-columns:56px 1fr}.result{grid-column:1/-1}.formula-card{grid-template-columns:1fr;text-align:left}.source-grid,.meaning-grid,.cta .wrap,.density{grid-template-columns:1fr}.image-stack .main-img{aspect-ratio:1/1}.float-card{position:relative;right:auto;bottom:auto;width:100%;margin-top:.9rem}.density{padding:1.35rem;border-radius:26px}.footer-inner{display:block}.nav .btn{padding:.75rem .9rem;min-height:42px}}
-    @media(max-width:560px){.wrap{width:min(calc(100% - 24px),var(--max))}.metric-grid,.density-metrics{grid-template-columns:1fr}.nav-links{gap:.7rem;font-size:.86rem}.land-card{padding:.85rem;border-radius:20px}.hero h1{letter-spacing:-.05em}.section-title{letter-spacing:-.04em}}
-    @media(min-width:1500px){:root{--max:1320px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
-  
-.download-area{background:#f8fbfc;padding:clamp(54px,7vw,92px) 0}.download-panel{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.2rem,4vw,3rem);align-items:center;padding:clamp(1.25rem,3vw,2.4rem);border-radius:30px;background:#fff;border:1px solid #e2edf2;box-shadow:0 18px 44px rgba(5,32,58,.08)}.download-panel img{border-radius:24px;border:1px solid #dfeaf0;box-shadow:0 12px 30px rgba(5,32,58,.08)}.download-panel p{color:#526b7d;font-size:1.05rem}.download-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.1rem}.btn-download{background:linear-gradient(135deg,var(--green),#92cf6c);color:#07203a;box-shadow:0 14px 30px rgba(105,179,76,.22)}@media(max-width:900px){.download-panel{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-<header aria-label="Site header" class="site-header"><div class="wrap nav"><a aria-label="Solargation® Home" class="brand" href="index.html"><img alt="Solargation® mark" src="assets/solargation-mark.png"/><span>Solargation®<small>by Phoebus</small></span></a><nav aria-label="Primary navigation" class="nav-links"><a href="index.html">Home</a><a href="landuse.html">Land</a><a aria-current="page" href="wateruse.html">Water</a><a href="energy.html">Energy</a><a href="crops.html">Crops</a><a href="news.html">News</a><a class="btn btn-primary" href="contact.html">Contact</a></nav></div></header>
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="A Solargation&reg; water-use comparison showing representative operational water consumption for diesel, natural gas, traditional solar PV, and agricultural water-conserving Solargation&reg;." name="description">
+  <title>
+   Solargation&reg; | Water Use Comparison
+  </title>
+  <style>
+   :root {
+    --navy:#061f3c;
+    --navy-2:#0a2a4e;
+    --deep:#041526;
+    --green:#69b34c;
+    --green-2:#0f6b42;
+    --gold:#f6c53d;
+    --amber:#d89400;
+    --sky:#2aa7df;
+    --blue:#0f55a2;
+    --ice:#e9f4f8;
+    --white:#fff;
+    --muted:#617487;
+    --line:#dce8ef;
+    --max:1180px;
+    --radius:28px;
+    --shadow:0 26px 70px rgba(4,21,38,.18);
+    --soft:0 14px 36px rgba(4,21,38,.10);
+    --h1:clamp(2.55rem,7vw,6.1rem);
+    --h2:clamp(2rem,4vw,4.15rem);
+    --h3:clamp(1.18rem,2vw,1.7rem);
+    --p:clamp(1rem,1.25vw,1.18rem);
+    --small:clamp(.83rem,1vw,.96rem);
+}
+
+* {
+    box-sizing:border-box;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+    margin:0;
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:var(--deep);
+    background:#f8fbfc;
+    line-height:1.55;
+    overflow-x:hidden;
+}
+
+img {
+    max-width:100%;
+    display:block;
+}
+
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
+.wrap {
+    width:min(calc(100% - 40px),var(--max));
+    margin-inline:auto;
+}
+
+.eyebrow {
+    display:inline-flex;
+    gap:1.5rem;
+    align-items:center;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+    font-size:var(--small);
+    font-weight:800;
+    color:var(--green-2);
+}
+
+.eyebrow:before {
+    content:"";
+    width:10px;
+    height:10px;
+    background:var(--sky);
+    border-radius:2px;
+    box-shadow:14px 0 0 var(--green);
+}
+
+.btn {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.55rem;
+    padding:1rem 1.25rem;
+    border-radius:999px;
+    font-weight:800;
+    letter-spacing:.01em;
+    transition:transform .22s ease,box-shadow .22s ease,background .22s ease;
+    min-height:48px;
+}
+
+.btn:hover {
+    transform:translateY(-2px);
+}
+
+.btn-primary {
+    background:linear-gradient(135deg,var(--gold),#ffe28a);
+    color:#09213a;
+    box-shadow:0 16px 34px rgba(246,197,61,.28);
+}
+
+.btn-secondary {
+    border:1px solid rgba(255,255,255,.35);
+    color:#fff;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+}
+
+.site-header {
+    position:fixed;
+    inset:0 0 auto 0;
+    z-index:50;
+    background:rgba(6,31,60,.78);
+    border-bottom:1px solid rgba(255,255,255,.10);
+    backdrop-filter:blur(16px);
+}
+
+.nav {
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+}
+
+.brand {
+    display:flex;
+    align-items:center;
+    gap:.8rem;
+    color:#fff;
+    font-weight:900;
+    letter-spacing:.02em;
+}
+
+.brand img {
+    width:42px;
+    height:42px;
+    object-fit:contain;
+}
+
+.brand small {
+    display:block;
+    color:#b9d4e6;
+    font-weight:700;
+    font-size:.72rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.nav-links {
+    display:flex;
+    align-items:center;
+    gap:1.1rem;
+    color:#d8e7f0;
+    font-weight:750;
+    font-size:.94rem;
+}
+
+.nav-links a {
+    opacity:.9;
+}
+
+.nav-links a:hover {
+    opacity:1;
+    color:var(--gold);
+}
+
+.nav-links a[aria-current="page"] {
+    opacity:1;
+    color:var(--gold);
+}
+
+section {
+    padding:clamp(64px,8vw,120px) 0;
+}
+
+.section-title {
+    font-size:var(--h2);
+    line-height:.98;
+    letter-spacing:-.055em;
+    margin:.55rem 0 1rem;
+    color:var(--navy);
+}
+
+.lead {
+    font-size:clamp(1.08rem,1.5vw,1.36rem);
+    color:#375064;
+    max-width:820px;
+}
+
+.hero {
+    min-height:100svh;
+    position:relative;
+    display:grid;
+    place-items:center;
+    color:#fff;
+    background:var(--navy);
+    padding:130px 0 74px;
+}
+
+.hero:before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:linear-gradient(90deg,rgba(4,21,38,.96) 0%,rgba(4,21,38,.78) 42%,rgba(4,21,38,.22) 100%),linear-gradient(0deg,rgba(4,21,38,.86) 0%,rgba(4,21,38,.10) 48%,rgba(4,21,38,.22) 100%),url('assets/hero-1600.webp');
+    background-size:cover;
+    background-position:center;
+}
+
+.hero:after {
+    content:"";
+    position:absolute;
+    inset:auto -20% -22% -20%;
+    height:38%;
+    background:radial-gradient(ellipse at center,rgba(42,167,223,.26),transparent 65%);
+}
+
+.hero-inner {
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
+    gap:clamp(2rem,6vw,6rem);
+    align-items:center;
+}
+
+.hero h1 {
+    font-size:var(--h1);
+    line-height:.91;
+    margin:.8rem 0 1.2rem;
+    letter-spacing:-.07em;
+}
+
+.hero h1 span {
+    display:block;
+    color:var(--gold);
+}
+
+.hero p {
+    font-size:clamp(1.05rem,1.7vw,1.45rem);
+    max-width:760px;
+    color:#e9f4f8;
+    margin:0 0 1.7rem;
+}
+
+.hero-actions {
+    display:flex;
+    gap:.85rem;
+    flex-wrap:wrap;
+}
+
+.hero-panel {
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:var(--radius);
+    backdrop-filter:blur(18px);
+    box-shadow:0 34px 90px rgba(0,0,0,.28);
+    overflow:hidden;
+}
+
+.hero-panel-top {
+    padding:1.2rem 1.2rem .35rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.hero-panel-top img {
+    width:70px;
+}
+
+.status {
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+    color:#dff3e6;
+    font-weight:800;
+    font-size:.86rem;
+}
+
+.status i {
+    display:block;
+    width:10px;
+    height:10px;
+    background:var(--green);
+    border-radius:50%;
+    box-shadow:0 0 0 6px rgba(105,179,76,.18);
+}
+
+.metric-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:rgba(255,255,255,.10);
+    margin-top:1rem;
+}
+
+.metric {
+    padding:1.1rem;
+    background:rgba(6,31,60,.48);
+}
+
+.metric b {
+    display:block;
+    font-size:clamp(1.7rem,4vw,3.2rem);
+    line-height:1;
+    color:#fff;
+    letter-spacing:-.05em;
+}
+
+.metric span {
+    display:block;
+    color:#c6d8e6;
+    font-size:.88rem;
+    margin-top:.4rem;
+}
+
+.benchmark {
+    position:relative;
+    z-index:1;
+    background:#fff;
+    border-bottom:1px solid var(--line);
+}
+
+.formula-card {
+    display:grid;
+    grid-template-columns:72px 1fr;
+    gap:1.2rem;
+    align-items:center;
+    padding:1.3rem;
+    border-radius:26px;
+    background:linear-gradient(180deg,#f7fbfd,#fff);
+    border:1px solid #d7e8f0;
+    box-shadow:var(--soft);
+}
+
+.info-icon {
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:var(--blue);
+    color:#fff;
+    font-weight:950;
+    font-size:2rem;
+}
+
+.formula-card p {
+    margin:.15rem 0;
+    color:#243b50;
+    font-size:clamp(1rem,1.4vw,1.25rem);
+}
+
+.formula-card strong {
+    color:var(--navy);
+}
+
+.comparison {
+    background:#fff;
+}
+
+.comparison-grid {
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 320px;
+    gap:1.2rem;
+    align-items:start;
+    margin-top:2rem;
+}
+
+.cards {
+    display:grid;
+    gap:1rem;
+}
+
+.land-card {
+    display:grid;
+    grid-template-columns:72px 1fr minmax(180px,260px);
+    gap:1.1rem;
+    align-items:center;
+    padding:1rem;
+    border-radius:24px;
+    background:#fff;
+    border:1px solid var(--line);
+    box-shadow:var(--soft);
+    position:relative;
+    overflow:hidden;
+}
+
+.land-card:before {
+    content:"";
+    position:absolute;
+    inset:0 auto 0 0;
+    width:7px;
+    background:var(--blue);
+}
+
+.land-card.gold:before {
+    background:var(--amber);
+}
+
+.land-card.green:before {
+    background:var(--green-2);
+}
+
+.land-card .rank {
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    color:#fff;
+    font-weight:950;
+    font-size:1.25rem;
+    background:var(--blue);
+    box-shadow:0 12px 26px rgba(15,85,162,.22);
+}
+
+.land-card.gold .rank {
+    background:var(--amber);
+}
+
+.land-card.green .rank {
+    background:var(--green-2);
+}
+
+.land-text h3 {
+    margin:0 0 .4rem;
+    font-size:var(--h3);
+    color:var(--navy);
+    line-height:1.1;
+}
+
+.land-card.gold h3 {
+    color:var(--amber);
+}
+
+.land-card.green h3 {
+    color:var(--green-2);
+}
+
+.land-text p {
+    margin:.2rem 0;
+    color:#445e70;
+}
+
+.result {
+    padding:1rem;
+    border-radius:20px;
+    background:linear-gradient(180deg,#f5f9fc,#fff);
+    border:1px solid #dce8ef;
+    text-align:center;
+}
+
+.result b {
+    display:block;
+    font-size:clamp(2rem,4vw,3.7rem);
+    line-height:.94;
+    letter-spacing:-.06em;
+    color:var(--blue);
+}
+
+.land-card.gold .result b {
+    color:var(--amber);
+}
+
+.land-card.green .result b {
+    color:var(--green-2);
+}
+
+.result span {
+    font-weight:900;
+    color:#344c5e;
+}
+
+.gain-badge {
+    display:inline-flex;
+    margin-top:.55rem;
+    padding:.38rem .65rem;
+    border-radius:999px;
+    background:var(--green-2);
+    color:#fff;
+    font-weight:900;
+    font-size:.86rem;
+}
+
+.assumptions {
+    position:sticky;
+    top:92px;
+    background:linear-gradient(180deg,var(--navy),#0d3a68);
+    color:#fff;
+    border-radius:24px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+}
+
+.assumptions h3 {
+    margin:0;
+    padding:1.1rem 1.15rem;
+    background:rgba(255,255,255,.08);
+    font-size:1.2rem;
+}
+
+.assumptions ul {
+    margin:0;
+    padding:1.15rem 1.25rem 1.35rem 2.1rem;
+    display:grid;
+    gap:.95rem;
+}
+
+.assumptions li {
+    color:#e5f0f6;
+}
+
+.meaning {
+    background:linear-gradient(180deg,#f8fbfc,#fff);
+}
+
+.meaning-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.2rem;
+}
+
+.meaning-card {
+    padding:1.45rem;
+    border-radius:26px;
+    background:#fff;
+    border:1px solid var(--line);
+    box-shadow:var(--soft);
+}
+
+.meaning-card h3 {
+    margin:.2rem 0 .65rem;
+    color:var(--navy);
+    font-size:var(--h3);
+}
+
+.meaning-card p,.meaning-card li {
+    color:#4d6476;
+}
+
+.meaning-card ul {
+    margin:.5rem 0 0;
+    padding-left:1.15rem;
+}
+
+.note {
+    border-color:#f5d889;
+    background:linear-gradient(180deg,#fffdf5,#fff);
+}
+
+.source {
+    background:#f8fbfc;
+}
+
+.source-grid {
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:clamp(2rem,5vw,5rem);
+    align-items:center;
+}
+
+.image-stack {
+    position:relative;
+}
+
+.image-stack .main-img {
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    aspect-ratio:4/3;
+    object-fit:cover;
+}
+
+.float-card {
+    position:absolute;
+    right:-22px;
+    bottom:26px;
+    width:min(360px,76%);
+    padding:1.15rem;
+    border-radius:22px;
+    background:#fff;
+    box-shadow:var(--shadow);
+    border:1px solid #e3edf2;
+}
+
+.float-card b {
+    display:block;
+    color:var(--navy);
+    font-size:1.1rem;
+}
+
+.float-card span {
+    color:var(--muted);
+    font-size:.95rem;
+}
+
+.density {
+    background:linear-gradient(135deg,var(--navy),#123e65);
+    border-radius:34px;
+    padding:clamp(2rem,5vw,4rem);
+    color:#fff;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2rem;
+    align-items:center;
+    margin-top:2.3rem;
+    overflow:hidden;
+    position:relative;
+}
+
+.density:after {
+    content:"";
+    position:absolute;
+    right:-120px;
+    top:-120px;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    background:rgba(42,167,223,.20);
+}
+
+.density h2 {
+    font-size:clamp(2rem,4.5vw,4.4rem);
+    line-height:.98;
+    margin:0;
+}
+
+.density p {
+    font-size:1.08rem;
+    color:#dcecf2;
+}
+
+.density-metrics {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1rem;
+    position:relative;
+    z-index:1;
+}
+
+.density-metric {
+    padding:1.35rem;
+    border-radius:24px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.16);
+}
+
+.density-metric b {
+    display:block;
+    font-size:clamp(2.1rem,5vw,4.8rem);
+    line-height:1;
+    color:var(--gold);
+}
+
+.density-metric span {
+    color:#d7e5ed;
+    font-weight:760;
+}
+
+.cta {
+    position:relative;
+    color:#fff;
+    background:var(--deep);
+    overflow:hidden;
+    padding:clamp(70px,9vw,132px) 0;
+}
+
+.cta:before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,rgba(4,21,38,.92),rgba(4,21,38,.58)),url('assets/afternoon-1600.webp') center/cover no-repeat;
+}
+
+.cta .wrap {
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:1fr .8fr;
+    gap:2rem;
+    align-items:center;
+}
+
+.cta h2 {
+    font-size:var(--h2);
+    line-height:.98;
+    letter-spacing:-.055em;
+    margin:.6rem 0 1rem;
+}
+
+.cta p {
+    font-size:clamp(1.03rem,1.4vw,1.22rem);
+    color:#e6eff4;
+    max-width:720px;
+}
+
+.next-card {
+    padding:1.45rem;
+    border-radius:26px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.16);
+    backdrop-filter:blur(14px);
+}
+
+.next-card ul {
+    margin:0;
+    padding-left:1.15rem;
+    display:grid;
+    gap:.8rem;
+    color:#edf5f8;
+}
+
+.sources-list {
+    font-size:1rem;
+    color:#425c6d;
+}
+
+.site-footer {
+    padding:1.15rem 0;
+    background:#03111e;
+    color:#b6cad9;
+    font-size:.9rem;
+}
+
+.footer-inner {
+    display:flex;
+    justify-content:space-between;
+    gap:1rem;
+    flex-wrap:wrap;
+}
+
+.footer-inner strong {
+    color:#fff;
+}
+
+.source-note {
+    font-size:.94rem;
+    color:#536b7c;
+}
+
+.highlight {
+    color:var(--gold);
+    font-weight:900;
+}
+
+@media(max-width:1100px) {
+    .hero-inner,.source-grid,.cta .wrap,.density,.comparison-grid,.meaning-grid {
+        grid-template-columns:1fr;
+    }
+
+    .assumptions {
+        position:relative;
+        top:auto;
+    }
+
+    .cta .wrap {
+        gap:1.35rem;
+    }
+
+    .density-metrics {
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:780px) {
+    .nav {
+        height:auto;
+        padding:14px 0;
+        align-items:flex-start;
+    }
+
+    .nav-links {
+        flex-wrap:wrap;
+        justify-content:flex-end;
+    }
+
+    .hero {
+        padding-top:150px;
+    }
+
+    .hero-panel {
+        margin-top:1rem;
+    }
+
+    .metric-grid,.density-metrics {
+        grid-template-columns:1fr 1fr;
+    }
+
+    .land-card {
+        grid-template-columns:56px 1fr;
+    }
+
+    .result {
+        grid-column:1/-1;
+    }
+
+    .formula-card {
+        grid-template-columns:1fr;
+        text-align:left;
+    }
+
+    .source-grid,.meaning-grid,.cta .wrap,.density {
+        grid-template-columns:1fr;
+    }
+
+    .image-stack .main-img {
+        aspect-ratio:1/1;
+    }
+
+    .float-card {
+        position:relative;
+        right:auto;
+        bottom:auto;
+        width:100%;
+        margin-top:.9rem;
+    }
+
+    .density {
+        padding:1.35rem;
+        border-radius:26px;
+    }
+
+    .footer-inner {
+        display:block;
+    }
+
+    .nav .btn {
+        padding:.75rem .9rem;
+        min-height:42px;
+    }
+}
+
+@media(max-width:560px) {
+    .wrap {
+        width:min(calc(100% - 24px),var(--max));
+    }
+
+    .metric-grid,.density-metrics {
+        grid-template-columns:1fr;
+    }
+
+    .nav-links {
+        gap:.7rem;
+        font-size:.86rem;
+    }
+
+    .land-card {
+        padding:.85rem;
+        border-radius:20px;
+    }
+
+    .hero h1 {
+        letter-spacing:-.05em;
+    }
+
+    .section-title {
+        letter-spacing:-.04em;
+    }
+}
+
+@media(min-width:1500px) {
+    :root {
+        --max:1320px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    * {
+        scroll-behavior:auto!important;
+        transition:none!important;
+        animation:none!important;
+    }
+}
+
+.download-area {
+    background:#f8fbfc;
+    padding:clamp(54px,7vw,92px) 0;
+}
+
+.download-panel {
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:clamp(1.2rem,4vw,3rem);
+    align-items:center;
+    padding:clamp(1.25rem,3vw,2.4rem);
+    border-radius:30px;
+    background:#fff;
+    border:1px solid #e2edf2;
+    box-shadow:0 18px 44px rgba(5,32,58,.08);
+}
+
+.download-panel img {
+    border-radius:24px;
+    border:1px solid #dfeaf0;
+    box-shadow:0 12px 30px rgba(5,32,58,.08);
+}
+
+.download-panel p {
+    color:#526b7d;
+    font-size:1.05rem;
+}
+
+.download-actions {
+    display:flex;
+    gap:.8rem;
+    flex-wrap:wrap;
+    margin-top:1.1rem;
+}
+
+.btn-download {
+    background:linear-gradient(135deg,var(--green),#92cf6c);
+    color:#07203a;
+    box-shadow:0 14px 30px rgba(105,179,76,.22);
+}
+
+@media(max-width:900px) {
+    .download-panel {
+        grid-template-columns:1fr;
+    }
+}
+  </style>
+ </head>
+ <body>
+  <!-- =========================
+     Site Header / Navigation
+     ========================= -->
+<header aria-label="Site header" class="site-header">
+   <div class="wrap nav">
+    <a aria-label="Solargation&reg; Home" class="brand" href="index.html">
+     <img alt="Solargation&reg; mark" src="assets/solargation-mark.png">
+     <span>
+      Solargation&reg;
+      <small>
+       by Phoebus
+      </small>
+     </span>
+    </a>
+    <nav aria-label="Primary navigation" class="nav-links">
+     <a href="index.html">
+      Home
+     </a>
+     <a href="landuse.html">
+      Land
+     </a>
+     <a aria-current="page" href="wateruse.html">
+      Water
+     </a>
+     <a href="energy.html">
+      Energy
+     </a>
+     <a href="crops.html">
+      Crops
+     </a>
+     <a href="news.html">
+      News
+     </a>
+     <a class="btn btn-primary" href="contact.html">
+      Contact
+     </a>
+    </nav>
+   </div>
+  </header>
+  <!-- =========================
+     Main Page Content
+     ========================= -->
 <main id="top">
-<section aria-labelledby="hero-title" class="hero"><div class="wrap hero-inner"><div><span class="eyebrow">Water + Agriculture + Energy</span><h1 id="hero-title">Water use that can shift from consumption <span>to farm-level savings.</span></h1><p>This responsive page translates the provided infographic into a web-ready Solargation® water-use comparison, showing representative operational water consumption for diesel, natural gas, traditional solar PV, and agricultural water-conserving Solargation®.</p><div class="hero-actions"><a class="btn btn-primary" href="#comparison">View comparison</a><a class="btn btn-secondary" href="#meaning">Key takeaway</a></div></div><aside aria-label="Water use summary statistics" class="hero-panel"><div class="hero-panel-top"><img alt="" src="assets/solargation-mark.png"/><span class="status"><i></i> 7 acres/MW irrigation-offset case</span></div><div class="metric-grid"><div class="metric"><b>240</b><span>gal/MWh representative diesel turbine / generator value</span></div><div class="metric"><b>198</b><span>gal/MWh natural gas tower-cooled combined-cycle median</span></div><div class="metric"><b>26</b><span>gal/MWh direct water use for traditional solar PV</span></div><div class="metric"><b>−521 to −833</b><span>gal/MWh net water impact for Solargation® after avoided irrigation</span></div></div></aside></div></section>
-<section aria-labelledby="benchmark-title" class="benchmark" id="benchmark"><div class="wrap"><span class="eyebrow">Representative operational consumption</span><h2 class="section-title" id="benchmark-title">Thermal generation uses far more water than solar PV.</h2><div class="formula-card"><div class="info-icon">i</div><div><p><strong>Water-use metric shown:</strong> gallons per megawatt-hour (gal/MWh) of operational water consumption.</p><p>For Solargation®, the page separately highlights <strong>direct PV water use</strong>, <strong>avoided irrigation</strong>, and the resulting <strong>net water impact</strong> under the illustrative assumptions from the source graphic.</p></div></div></div></section>
-<section aria-labelledby="comparison-title" class="comparison" id="comparison"><div class="wrap"><span class="eyebrow">Technology comparison</span><h2 class="section-title" id="comparison-title">The same energy output can produce dramatically different water impacts.</h2><p class="lead">The cards below preserve the numbers and framing shown in the water-use infographic, while converting them into a clearer website experience for desktop and mobile viewing.</p><div class="comparison-grid"><div class="cards">
-<article class="land-card"><div class="rank">1</div><div class="land-text"><h3>Diesel turbine / generator</h3><p><strong>Water use:</strong> 240 gal/MWh.</p><p><strong>Context:</strong> representative combustion turbine / diesel value.</p></div><div class="result"><b>240</b><span>gal/MWh</span></div></article>
-<article class="land-card"><div class="rank">2</div><div class="land-text"><h3>Natural gas turbine</h3><p><strong>Water use:</strong> 198 gal/MWh.</p><p><strong>Context:</strong> tower-cooled combined-cycle median.</p></div><div class="result"><b>198</b><span>gal/MWh</span></div></article>
-<article class="land-card gold"><div class="rank">3</div><div class="land-text"><h3>Traditional solar PV</h3><p><strong>Water use:</strong> 26 gal/MWh.</p><p><strong>Context:</strong> low operational use because PV does not require cooling water.</p></div><div class="result"><b>26</b><span>gal/MWh</span></div></article>
-<article class="land-card green"><div class="rank">4</div><div class="land-text"><h3>Agricultural water-conserving Solargation®</h3><p><strong>Direct PV use:</strong> 26 gal/MWh.</p><p><strong>Avoided irrigation:</strong> 547–859 gal/MWh.</p><p><strong>Net water impact:</strong> −521 to −833 gal/MWh, meaning a farm-level net water-saving effect in the illustrative case.</p></div><div class="result"><b>−521 to −833</b><span>gal/MWh</span><em class="gain-badge">Net water impact</em></div></article>
-</div><aside aria-label="Solargation® irrigation-offset assumptions" class="assumptions"><h3>Solargation® irrigation-offset assumptions</h3><ul><li>Land intensity: 7 acres/MW.</li><li>Baseline irrigation: 2 acre-feet per acre per year.</li><li>Annual generation: 1 MW at 20% capacity factor = 1,752 MWh/year.</li><li>Agrivoltaic effect: 21%–33% lower soil evaporation under panels.</li><li>Estimated water saved: 0.96–1.51 million gallons per year.</li><li>Equivalent to 547–859 gal/MWh avoided irrigation.</li></ul></aside></div></div></section>
-<section aria-labelledby="meaning-title" class="meaning" id="meaning"><div class="wrap"><span class="eyebrow">What the comparison means</span><h2 class="section-title" id="meaning-title">Dual-use design can change the water story of a solar site.</h2><div class="meaning-grid"><article class="meaning-card"><h3>Key takeaway</h3><ul><li>Thermal generation uses much more water than solar PV.</li><li>Solar PV uses little water because it does not need cooling water.</li><li>At 7 acres per MW, Solargation® can become net water-saving at the farm level when irrigation demand falls.</li></ul></article><article class="meaning-card note"><h3>Important note</h3><p>Operational water use only is shown here. Solargation®’s irrigation offset is an illustrative estimate, not a universal value. It depends on crop type, local irrigation demand, climate, and how much irrigation reduction tracks lower soil evaporation.</p></article></div><div aria-label="Solargation® water summary" class="density"><div><h2>From water load to water advantage.</h2><p>Solargation® keeps the low direct operating water profile of solar PV, then layers on agricultural water savings by reducing irrigation needs under the provided assumptions. The result can be a net negative water impact on a gallons-per-megawatt-hour basis.</p></div><div class="density-metrics"><div class="density-metric"><b>547–859</b><span>gal/MWh of avoided irrigation in the illustrative case</span></div><div class="density-metric"><b>0.96–1.51M</b><span>gallons per year of estimated water saved</span></div></div></div></div></section>
-<section aria-labelledby="source-title" class="source"><div class="wrap source-grid"><div><span class="eyebrow">Grounding and source notes</span><h2 class="section-title" id="source-title">Built directly from the provided infographic data.</h2><p class="lead">This page uses the exact comparative framework shown in the supplied water-use graphic and translates it into an editable, responsive HTML5 page consistent with the existing Solargation® website style.</p><p class="sources-list"><strong>Sources listed in the infographic:</strong> Macknick et al., NREL (2011) for utility-scale PV median 26 gal/MWh and natural gas combined-cycle tower median 198 gal/MWh; Berkman et al., Brattle Group / WECC (2014) for representative combustion turbine / diesel value 240 gal/MWh; Omer et al., Solar Energy (2022) for cumulative soil-surface evaporation under agrivoltaic systems decreasing by 21%–33%; and conversion assumptions using 7 acres/MW, 2 acre-feet per acre per year, a 20% capacity factor, and 325,851 gallons per acre-foot.</p><p class="source-note">A clean downloadable comparison graphic is included in the website assets for presentation use.</p></div><div class="image-stack"><img alt="Water use comparison graphic" class="main-img" src="assets/water-comparison-download.png"/><div class="float-card"><b>Why the Solargation® number goes negative.</b><span>The direct PV use remains 26 gal/MWh, but the estimated irrigation offset is larger, creating a net water-saving result under the stated assumptions.</span></div></div></div></section>
-<section aria-labelledby="download-title" class="download-area" id="download">
-<div class="wrap download-panel">
-<div>
-<span class="eyebrow">Download graphic</span>
-<h2 class="section-title" id="download-title">Download the water-use comparison graphic.</h2>
-<p>This PNG summarizes the water-use comparison between diesel turbines, natural gas turbines, traditional solar PV, and Solargation® with irrigation-offset framing.</p>
-<div class="download-actions">
-<a class="btn btn-download" download="" href="assets/water-comparison-download.png">Download PNG</a>
-<a class="btn btn-primary" href="assets/water-comparison-download.png" rel="noopener" target="_blank">Open full size</a>
-</div>
-</div>
-<img alt="Download the water-use comparison graphic." src="assets/water-comparison-download.png"/>
-</div>
-</section><section aria-labelledby="explore-title" class="cta" id="explore"><div class="wrap"><div><span class="eyebrow">Explore the water-use case</span><h2 id="explore-title">A clearer web presentation for the Solargation® water story.</h2><p>This version keeps the same overall formatting logic and coding behavior as the prior Solargation® web package while turning the water-use infographic into a practical website page for presentation, editing, and publishing.</p><a class="btn btn-primary" href="#top">Back to top</a></div><aside class="next-card"><ul><li>Use the comparison to contrast thermal and solar water demands.</li><li>Explain why traditional solar has very low direct operational water use.</li><li>Show how irrigation savings can create a net water benefit for Solargation®.</li><li>Keep assumptions visible so partners understand what drives the numbers.</li></ul></aside></div></section>
-</main>
-<footer class="site-footer"><div class="wrap footer-inner"><div><strong>Solargation®</strong> | A Phoebus Fund dual-use energy, irrigation, and agriculture platform</div><div><a href="index.html">Home</a> · <a href="landuse.html">Land</a> · <a href="wateruse.html">Water</a> · <a href="energy.html">Energy</a> · <a href="crops.html">Crops</a> · <a href="news.html">News</a> · <a href="contact.html">Contact</a></div></div></footer>
-</body>
+   <!-- Hero Section -->
+<section aria-labelledby="hero-title" class="hero">
+    <div class="wrap hero-inner">
+     <div>
+      <span class="eyebrow">
+       Water + Agriculture + Energy
+      </span>
+      <h1 id="hero-title">
+       Water use that can shift from consumption
+       <span>
+        to farm-level savings.
+       </span>
+      </h1>
+      <p>
+       Solargation&reg; results in a significant reduction in agricultural water 
+      </p>
+      <div class="hero-actions">
+       <a class="btn btn-primary" href="#comparison">
+        View comparison
+       </a>
+       <a class="btn btn-secondary" href="#meaning">
+        Key takeaway
+       </a>
+      </div>
+     </div>
+     <aside aria-label="Water use summary statistics" class="hero-panel">
+      <div class="hero-panel-top">
+       <img alt src="assets/solargation-mark.png">
+       <span class="status">
+        <i>
+        </i>
+        7 acres/MW irrigation-offset case
+       </span>
+      </div>
+      <div class="metric-grid">
+       <div class="metric">
+        <b>
+         -240
+        </b>
+        <span>
+         gal/MWh representative diesel turbine / generator value
+        </span>
+       </div>
+       <div class="metric">
+        <b>
+         -198
+        </b>
+        <span>
+         gal/MWh natural gas tower-cooled combined-cycle median
+        </span>
+       </div>
+       <div class="metric">
+        <b>
+         -26
+        </b>
+        <span>
+         gal/MWh direct water use for traditional solar PV
+        </span>
+       </div>
+       <div class="metric">
+        <b>
+         +521 to +833
+        </b>
+        <span>
+         gal/MWh net water impact for Solargation&reg; after avoided irrigation
+        </span>
+       </div>
+      </div>
+     </aside>
+    </div>
+   </section>
+   <!-- Benchmark / Calculation Context -->
+<section aria-labelledby="benchmark-title" class="benchmark" id="benchmark">
+    <div class="wrap">
+     <span class="eyebrow">
+      Representative operational consumption
+     </span>
+     <h2 class="section-title" id="benchmark-title">
+      Thermal generation uses far more water than solar PV, but Solargation&reg; saves water on an agricultural scale!
+     </h2>
+     <div class="formula-card">
+      <div class="info-icon">
+       i
+      </div>
+      <div>
+       <p>
+        <strong>
+         Water-use metric shown:
+        </strong>
+        gallons per megawatt-hour (gal/MWh) of operational water consumption.
+       </p>
+       <p>
+        For Solargation&reg;, the page separately highlights
+        <strong>
+         direct PV water use
+        </strong>
+        ,
+        <strong>
+         avoided water use
+        </strong>
+        , and the resulting
+        <strong>
+         net water impact
+        </strong>
+        .
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Technology Comparison Cards -->
+<section aria-labelledby="comparison-title" class="comparison" id="comparison">
+    <div class="wrap">
+     <span class="eyebrow">
+      Technology comparison
+     </span>
+     <h2 class="section-title" id="comparison-title">
+      The same energy output can produce dramatically different water impacts.
+     </h2>
+     <p class="lead">
+      The cards below preserve the numbers and framing shown in the water-use infographic, while converting them into a clearer website experience for desktop and mobile viewing.
+     </p>
+     <div class="comparison-grid">
+      <div class="cards">
+       <article class="land-card">
+        <div class="rank">
+         1
+        </div>
+        <div class="land-text">
+         <h3>
+          Diesel turbine / generator
+         </h3>
+         <p>
+          <strong>
+           Water use:
+          </strong>
+          240 gal/MWh.
+         </p>
+         <p>
+          <strong>
+           Context:
+          </strong>
+          representative combustion turbine / diesel value.
+         </p>
+        </div>
+        <div class="result">
+         <b>
+          -240
+         </b>
+         <span>
+          gal/MWh
+         </span>
+        </div>
+       </article>
+       <article class="land-card">
+        <div class="rank">
+         2
+        </div>
+        <div class="land-text">
+         <h3>
+          Natural gas turbine
+         </h3>
+         <p>
+          <strong>
+           Water use:
+          </strong>
+          -198 gal/MWh.
+         </p>
+         <p>
+          <strong>
+           Context:
+          </strong>
+          tower-cooled combined-cycle median.
+         </p>
+        </div>
+        <div class="result">
+         <b>
+          198
+         </b>
+         <span>
+          gal/MWh
+         </span>
+        </div>
+       </article>
+       <article class="land-card gold">
+        <div class="rank">
+         3
+        </div>
+        <div class="land-text">
+         <h3>
+          Traditional solar PV
+         </h3>
+         <p>
+          <strong>
+           Water use:
+          </strong>
+          26 gal/MWh.
+         </p>
+         <p>
+          <strong>
+           Context:
+          </strong>
+          low operational use because PV does not require cooling water.
+         </p>
+        </div>
+        <div class="result">
+         <b>
+          -26
+         </b>
+         <span>
+          gal/MWh
+         </span>
+        </div>
+       </article>
+       <article class="land-card green">
+        <div class="rank">
+         4
+        </div>
+        <div class="land-text">
+         <h3>
+          Agricultural water-conserving Solargation&reg;
+         </h3>
+         <p>
+          <strong>
+           Direct PV use:
+          </strong>
+          26 gal/MWh.
+         </p>
+         <p>
+          <strong>
+           Avoided water use:
+          </strong>
+          547&ndash;859 gal/MWh.
+         </p>
+         <p>
+          <strong>
+           Net water impact:
+          </strong>
+          &minus;521 to &minus;833 gal/MWh, meaning a farm-level net water-saving effect in the illustrative case.
+         </p>
+        </div>
+        <div class="result">
+         <b>
+          521 to 833
+         </b>
+         <span>
+          gal/MWh saved
+         </span>
+         <em class="gain-badge">
+          Net water impact
+         </em>
+        </div>
+       </article>
+      </div>
+      <aside aria-label="Solargation&reg; irrigation-offset assumptions" class="assumptions">
+       <h3>
+        Solargation&reg; irrigation-offset assumptions
+       </h3>
+       <ul>
+        <li>
+         Land intensity: 7 acres/MW.
+        </li>
+        <li>
+         Baseline irrigation: 2 acre-feet per acre per year.
+        </li>
+        <li>
+         Annual generation: 1 MW at 20% capacity factor = 1,752 MWh/year.
+        </li>
+        <li>
+         Agrivoltaic effect: 21%&ndash;33% lower soil evaporation under panels.
+        </li>
+        <li>
+         Estimated water saved: 0.96&ndash;1.51 million gallons per year.
+        </li>
+        <li>
+         Equivalent to 547&ndash;859 gal/MWh avoided irrigation.
+        </li>
+       </ul>
+      </aside>
+     </div>
+    </div>
+   </section>
+   <!-- Meaning / Key Takeaway Section -->
+<section aria-labelledby="meaning-title" class="meaning" id="meaning">
+    <div class="wrap">
+     <span class="eyebrow">
+      What the comparison means
+     </span>
+     <h2 class="section-title" id="meaning-title">
+      Dual-use design can change the water story of a solar site.
+     </h2>
+     <div class="meaning-grid">
+      <article class="meaning-card">
+       <h3>
+        Key takeaway
+       </h3>
+       <ul>
+        <li>
+         Thermal generation uses much more water than solar PV.
+        </li>
+        <li>
+         Solar PV uses little water because it does not need cooling water.
+        </li>
+        <li>
+         At 7 acres per MW, Solargation&reg; can become net water-saving at the farm level when irrigation demand falls.
+        </li>
+       </ul>
+      </article>
+      <article class="meaning-card note">
+       <h3>
+        Important note
+       </h3>
+       <p>
+        Operational water use only is shown here. Solargation&reg;&rsquo;s irrigation offset is an illustrative estimate, not a universal value. It depends on crop type, local irrigation demand, climate, and how much irrigation reduction tracks lower soil evaporation.
+       </p>
+      </article>
+     </div>
+     <div aria-label="Solargation&reg; water summary" class="density">
+      <div>
+       <h2>
+        From water load to water advantage.
+       </h2>
+       <p>
+        Solargation&reg; keeps the low direct operating water profile of solar PV, then layers on agricultural water savings by reducing irrigation needs under the provided assumptions. The result can be a net negative water impact on a gallons-per-megawatt-hour basis.
+       </p>
+      </div>
+      <div class="density-metrics">
+       <div class="density-metric">
+        <b>
+         547&ndash;859
+        </b>
+        <span>
+         gal/MWh of avoided irrigation in the illustrative case
+        </span>
+       </div>
+       <div class="density-metric">
+        <b>
+         0.96&ndash;1.51M
+        </b>
+        <span>
+         gallons per year of estimated water saved
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Source Notes Section -->
+<section aria-labelledby="source-title" class="source">
+    <div class="wrap source-grid">
+     <div>
+      <span class="eyebrow">
+       Grounding and source notes
+      </span>
+      <h2 class="section-title" id="source-title">
+       Water conservation through shading, data driven water deployment, and solargation&reg;
+      </h2>
+      <p class="sources-list">
+       <strong>
+        Sources:
+       </strong>
+       Macknick et al., NREL (2011) for utility-scale PV median 26 gal/MWh and natural gas combined-cycle tower median 198 gal/MWh; Berkman et al., Brattle Group / WECC (2014) for representative combustion turbine / diesel value 240 gal/MWh; Omer et al., Solar Energy (2022) for cumulative soil-surface evaporation under agrivoltaic systems decreasing by 21%&ndash;33%; and conversion assumptions using 7 acres/MW, 2 acre-feet per acre per year, a 20% capacity factor, and 325,851 gallons per acre-foot.
+      </p>
+     </div>
+     <div class="image-stack">
+      <img alt="Water use comparison graphic" class="main-img" src="assets/water-comparison-download.png">
+     </div>
+    </div>
+   </section>
+   <!-- Closing Call-To-Action Section -->
+<section aria-labelledby="explore-title" class="cta" id="explore">
+    <div class="wrap">
+     <div>
+      <span class="eyebrow">
+       Explore the water-use case
+      </span>
+      <h2 id="explore-title">
+       Solargation&reg; for an clear energy and water benefit in a resource scarce world.
+      </h2>
+      <p>
+      Solargation&reg; creates a unique advantage to the water cycle by dramatically reducing agricultural water consumption while eliminating water consumption from energy resources.
+      </p>
+      <a class="btn btn-primary" href="#top">
+       Back to top
+      </a>
+     </div>
+     <aside class="next-card">
+      <ul>
+       <li>
+        Solargation&reg; generates electricity with the lowest levels of water consumption.
+       </li>
+       <li>
+        Shade from the Solargation&reg; panels reduces soil evaporation, which lowers irrigation needs and create a net water-saving effect at the farm level.
+       </li>
+       <li>
+        Irrigation from Solargation&reg; allows farmers to deploy water more strategically, which can further increase water savings and crop resilience in drought conditions.
+       </li>
+       <li>
+        Soil data from Solargation&reg; can help farmers optimize irrigation timing and amounts, which can further reduce water use while maintaining or improving crop yields.
+       </li>
+      </ul>
+     </aside>
+    </div>
+   </section>
+  </main>
+  <!-- =========================
+     Site Footer
+     ========================= -->
+<footer class="site-footer">
+   <div class="wrap footer-inner">
+    <div>
+     <strong>
+      Solargation&reg;
+     </strong>
+     | A Phoebus Fund dual-use energy, irrigation, and agriculture platform
+    </div>
+    <div>
+     <a href="index.html">
+      Home
+     </a>
+     &middot;
+     <a href="landuse.html">
+      Land
+     </a>
+     &middot;
+     <a href="wateruse.html">
+      Water
+     </a>
+     &middot;
+     <a href="energy.html">
+      Energy
+     </a>
+     &middot;
+     <a href="crops.html">
+      Crops
+     </a>
+     &middot;
+     <a href="news.html">
+      News
+     </a>
+     &middot;
+     <a href="contact.html">
+      Contact
+     </a>
+    </div>
+   </div>
+  </footer>
+ </body>
 </html>
