@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=$HOME/public_html/solargation.com/
+    - export DEPLOYPATH=/home4/arkinnov/public_html/solargation.com/
 
     # Confirm the deployment directory exists.
     - /bin/mkdir -p $DEPLOYPATH
