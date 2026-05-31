@@ -1,14 +1,22 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=$HOME/public_html/website_18ed1161/
-    - /bin/cp -R assets $DEPLOYPATH
+    - export DEPLOYPATH=$HOME/public_html/solargation.com/
+
+    # Confirm the deployment directory exists.
+    - /bin/mkdir -p $DEPLOYPATH
+
+    # Deploy the static website pages.
     - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp about-team.html $DEPLOYPATH
     - /bin/cp contact.html $DEPLOYPATH
+    - /bin/cp crops.html $DEPLOYPATH
     - /bin/cp energy.html $DEPLOYPATH
     - /bin/cp landuse.html $DEPLOYPATH
-    - /bin/cp crops.html $DEPLOYPATH
-    - /bin/cp landyield.html $DEPLOYPATH
-    - /bin/cp wateruse.html $DEPLOYPATH
     - /bin/cp news.html $DEPLOYPATH
+    - /bin/cp wateruse.html $DEPLOYPATH
+
+    # Deploy shared assets and server configuration.
+    - /bin/cp -R assets $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH
+    - /bin/cp .nojekyll $DEPLOYPATH
