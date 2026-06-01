@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
-<meta content="A Solargation® crops comparison showing agricultural crop-output impact for diesel turbines, natural gas turbines, traditional PV, and Solargation® dual-use farm production." name="description"/>
+<meta content="A Solargation® crops comparison and food-safety discussion showing crop-output impact and evidence-based safeguards for food grown under properly installed and maintained solar panels." name="description"/>
 <title>
-   Solargation® | Crops Impact Comparison
+   Solargation® | Crops Impact + Food Safety
   </title>
 <style>
    :root {
@@ -1109,6 +1109,237 @@ section {
     margin-bottom:1.7rem
   }
 }
+  
+/* Food safety and contamination-control section */
+.food-safety {
+  background:linear-gradient(180deg,#fff,#f8fbfc);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line)
+}
+
+.food-safety-hero {
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);
+  gap:clamp(1.2rem,4vw,3rem);
+  align-items:stretch
+}
+
+.safety-verdict {
+  border-radius:28px;
+  padding:clamp(1.25rem,3vw,2rem);
+  color:#fff;
+  background:linear-gradient(135deg,var(--navy),#0f6b42);
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  justify-content:center
+}
+
+.safety-verdict strong {
+  display:block;
+  margin:.9rem 0 .7rem;
+  font-size:clamp(1.55rem,3vw,2.7rem);
+  line-height:.98;
+  letter-spacing:-.045em
+}
+
+.safety-verdict p {
+  margin:0;
+  color:#e7f4ee;
+  font-size:1.02rem
+}
+
+.evidence-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+  margin-top:2rem
+}
+
+.evidence-card {
+  padding:1.15rem;
+  border-radius:24px;
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:var(--soft)
+}
+
+.evidence-primary {
+  background:linear-gradient(180deg,#eff9ed,#fff);
+  border-color:#cfe8c8
+}
+
+.evidence-icon {
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  margin-bottom:.85rem;
+  border-radius:16px;
+  color:#fff;
+  font-weight:950;
+  background:var(--green-2);
+  box-shadow:0 12px 24px rgba(15,107,66,.18)
+}
+
+.evidence-card h3 {
+  margin:0 0 .55rem;
+  color:var(--navy);
+  font-size:1.08rem;
+  line-height:1.14
+}
+
+.evidence-card p {
+  margin:0;
+  color:#4e6577;
+  font-size:.97rem;
+  line-height:1.58
+}
+
+.pathway-panel {
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:1.2rem;
+  margin-top:1.4rem;
+  padding:clamp(1.1rem,3vw,1.7rem);
+  border-radius:28px;
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:var(--soft)
+}
+
+.pathway-panel h3 {
+  margin:.1rem 0 .65rem;
+  color:var(--navy);
+  font-size:var(--h3);
+  line-height:1.08
+}
+
+.pathway-panel p {
+  margin:0;
+  color:#526b7d
+}
+
+.pathway-table {
+  display:grid;
+  overflow:hidden;
+  border:1px solid #dbe8ef;
+  border-radius:20px;
+  background:#f8fbfc
+}
+
+.pathway-row {
+  display:grid;
+  grid-template-columns:.75fr 1.25fr;
+  gap:0;
+  border-top:1px solid #dbe8ef
+}
+
+.pathway-row:first-child {
+  border-top:0
+}
+
+.pathway-row span {
+  padding:.82rem .9rem;
+  color:#425b6f;
+  border-left:1px solid #dbe8ef
+}
+
+.pathway-row span:first-child {
+  border-left:0;
+  font-weight:850;
+  color:#123524
+}
+
+.pathway-head {
+  background:var(--navy);
+  color:#fff
+}
+
+.pathway-head span,
+.pathway-head span:first-child {
+  color:#fff;
+  font-weight:950
+}
+
+.proof-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.2rem;
+  margin-top:1.4rem
+}
+
+.proof-card {
+  padding:1.35rem;
+  border-radius:26px;
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:var(--soft)
+}
+
+.proof-card h3 {
+  margin:.1rem 0 .7rem;
+  color:var(--navy);
+  font-size:var(--h3);
+  line-height:1.1
+}
+
+.proof-card p,
+.proof-card li {
+  color:#4d6476
+}
+
+.proof-card ul {
+  margin:.35rem 0 0;
+  padding-left:1.15rem
+}
+
+.proof-card-green {
+  background:linear-gradient(180deg,#f1faef,#fff);
+  border-color:#cae8c2
+}
+
+.plain-takeaway {
+  margin-top:1.4rem;
+  padding:1.05rem 1.15rem;
+  border-radius:22px;
+  border:1px solid rgba(246,197,61,.45);
+  background:linear-gradient(180deg,#fffdf5,#fff);
+  color:#3f5a6d
+}
+
+.plain-takeaway strong {
+  color:var(--navy)
+}
+
+@media(max-width:1100px) {
+  .food-safety-hero,
+  .pathway-panel,
+  .proof-grid {
+    grid-template-columns:1fr
+  }
+
+  .evidence-grid {
+    grid-template-columns:1fr 1fr
+  }
+}
+
+@media(max-width:680px) {
+  .evidence-grid,
+  .pathway-row {
+    grid-template-columns:1fr
+  }
+
+  .pathway-row span {
+    border-left:0;
+    border-top:1px solid #dbe8ef
+  }
+
+  .pathway-row span:first-child {
+    border-top:0
+  }
+}
+
   </style>
 <link href="assets/site-responsive.css" rel="stylesheet"/>
 </head>
@@ -1128,6 +1359,7 @@ section {
 <a href="wateruse.html">Water</a>
 <a href="energy.html">Energy</a>
 <a aria-current="page" href="crops.html">Crops</a>
+<a href="#food-safety">Food Safety</a>
 <a href="news.html">News</a>
 <a href="about-team.html">Team</a>
 <a class="btn btn-primary" href="contact.html">Contact</a>
@@ -1148,9 +1380,7 @@ section {
        </span>
 </h1>
 <p>
-       Solargation® results in significant yield-impact growth. A 100 MW example
-        of current energy generation technologies shows that Solargation® creates
-        a net benefit to crops!
+       Solargation® results in significant yield-impact growth while keeping agriculture at the center of the site. This page compares crop-output impacts and explains why food grown under properly installed, intact, and maintained solar panels can be supported by documented soil stewardship, equipment safeguards, and food-safety monitoring.
       </p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="#comparison">
@@ -1158,6 +1388,9 @@ section {
        </a>
 <a class="btn btn-secondary" href="#meaning">
         What it means
+       </a>
+<a class="btn btn-secondary" href="#food-safety">
+        Food safety
        </a>
 </div>
 </div>
@@ -1490,6 +1723,130 @@ section {
 </div>
 </div>
 </section>
+
+<section aria-labelledby="food-safety-title" class="food-safety" id="food-safety">
+<div class="wrap">
+<span class="eyebrow">
+      Food Safety + Contamination Controls
+     </span>
+<div class="food-safety-hero">
+<div>
+<h2 class="section-title" id="food-safety-title">
+       Food grown under properly maintained solar panels can be supported by science-based safeguards.
+      </h2>
+<p class="lead">
+       The food-safety question should be answered with evidence, not assumption. Current solar-panel guidance and PV module research indicate that intact, working modules are sealed systems designed to keep internal materials isolated from weather, soil, and crops. Solargation® builds on that foundation by pairing dual-use solar with soil testing, stormwater controls, damaged-module removal, and end-of-life recycling procedures.
+      </p>
+</div>
+<div class="safety-verdict" aria-label="Food safety position">
+<span class="status"><i></i> Evidence-based position</span>
+<strong>Safe-by-design, verified-by-monitoring</strong>
+<p>
+        The strongest contamination concern is not normal crop production beneath intact modules. The stronger concern is poor site management: damaged panels, debris, erosion, improper fertilizer application, abandoned equipment, or improper disposal.
+       </p>
+</div>
+</div>
+
+<div class="evidence-grid" aria-label="Food safety evidence summary">
+<article class="evidence-card evidence-primary">
+<div class="evidence-icon">01</div>
+<h3>Working solar panels do not expose crops to panel materials.</h3>
+<p>
+        PV modules use glass, polymer encapsulants, backsheets, frames, and sealed electrical components to protect internal materials from weather and moisture during long-term outdoor use. EPA guidance states that working solar panels are safe during use and that encapsulation prevents leaching of small amounts of metals such as cadmium, silver, or lead.
+       </p>
+</article>
+
+<article class="evidence-card">
+<div class="evidence-icon">02</div>
+<h3>Materials of concern are trace, sealed, and module-specific.</h3>
+<p>
+        NREL identifies the primary materials of concern as trace lead in some crystalline-silicon modules and cadmium compounds in thin-film modules. These materials are tightly encapsulated inside the module package, and newer PV technologies have reduced these constituents over time.
+       </p>
+</article>
+
+<article class="evidence-card">
+<div class="evidence-icon">03</div>
+<h3>Leaching research focuses on damaged or waste conditions.</h3>
+<p>
+        Research that tests leaching usually simulates damaged panels, landfill conditions, acid-rain exposure, or end-of-life waste handling. Those conditions are materially different from food grown beneath intact modules in an operating field. The lesson for agriculture is straightforward: inspect equipment and remove damaged modules promptly.
+       </p>
+</article>
+
+<article class="evidence-card">
+<div class="evidence-icon">04</div>
+<h3>Soil testing makes the claim auditable.</h3>
+<p>
+        A Solargation® site should not ask buyers, farmers, or communities to rely on a blanket promise. Baseline soil testing, periodic soil sampling, stormwater observation, and crop-specific food-safety documentation make the land condition measurable and reviewable over time.
+       </p>
+</article>
+</div>
+
+<div class="pathway-panel">
+<div>
+<h3>Potential contamination pathways and Solargation® controls</h3>
+<p>
+        The practical food-safety standard is to identify each pathway, control it, and document the result. This turns “are crops safe?” into a managed agricultural quality-control process.
+       </p>
+</div>
+<div class="pathway-table" role="table" aria-label="Contamination pathways and controls">
+<div class="pathway-row pathway-head" role="row">
+<span role="columnheader">Concern</span>
+<span role="columnheader">How Solargation® controls it</span>
+</div>
+<div class="pathway-row" role="row">
+<span role="cell">Leaching from intact modules</span>
+<span role="cell">Use commercially appropriate PV modules with sealed encapsulation and maintain modules in operating condition.</span>
+</div>
+<div class="pathway-row" role="row">
+<span role="cell">Broken glass or damaged backsheets</span>
+<span role="cell">Inspect arrays, document damage, isolate affected areas when needed, and remove damaged modules from crop-production zones.</span>
+</div>
+<div class="pathway-row" role="row">
+<span role="cell">End-of-life panels</span>
+<span role="cell">Keep reusable panels separate from damaged panels and recycle or dispose of modules under applicable waste rules.</span>
+</div>
+<div class="pathway-row" role="row">
+<span role="cell">Stormwater dripline erosion</span>
+<span role="cell">Maintain ground cover, manage row spacing and grading, and correct concentrated runoff beneath panel edges.</span>
+</div>
+<div class="pathway-row" role="row">
+<span role="cell">Agricultural inputs near equipment</span>
+<span role="cell">Apply fertilizers, soil amendments, and fertigation materials carefully to protect crops and avoid corrosion of solar equipment.</span>
+</div>
+<div class="pathway-row" role="row">
+<span role="cell">Unknown pre-existing soil conditions</span>
+<span role="cell">Establish baseline soil conditions before or during site conversion and compare later tests against the baseline.</span>
+</div>
+</div>
+</div>
+
+<div class="proof-grid">
+<article class="proof-card">
+<h3>What this means for food grown under panels</h3>
+<p>
+        Properly installed and maintained solar panels do not automatically make farmland unsafe. For Solargation®, the safety case is strongest when the farm can show that modules are intact, damaged equipment is removed, soil conditions are monitored, stormwater is controlled, and crop handling follows ordinary food-safety practices.
+       </p>
+</article>
+<article class="proof-card proof-card-green">
+<h3>Solargation® food-safety commitment</h3>
+<ul>
+<li>Baseline soil testing before or during agricultural deployment.</li>
+<li>Periodic screening for site-specific metals or contaminants where risk factors exist.</li>
+<li>Documented inspections for cracked glass, damaged backsheets, loose wiring, or debris.</li>
+<li>Prompt damaged-module removal, recycling, or compliant disposal.</li>
+<li>Ground-cover, erosion, and stormwater controls to protect productive topsoil.</li>
+<li>Food-safety documentation suitable for farmers, buyers, lenders, agencies, and community review.</li>
+</ul>
+</article>
+</div>
+
+<div class="plain-takeaway">
+<strong>Plain-English takeaway:</strong>
+Food grown beneath intact, properly operated solar panels can be treated as safe when the project is designed, operated, and documented like an agricultural asset. Solargation® strengthens that position by combining solar engineering with farm management, soil testing, irrigation controls, and end-of-life panel procedures.
+</div>
+</div>
+</section>
+
 <section aria-labelledby="source-title" class="source">
 <div class="wrap source-grid">
 <div>
@@ -1500,13 +1857,13 @@ section {
        Built directly from primary research around the world.
       </h2>
 <p class="lead">
-       The methodology of acre-yield equivelents is based on USDA, EIA, and University research from around the globe.
+       The methodology of acre-yield equivalents is based on USDA, EIA, and University research from around the globe.
       </p>
 <p class="sources-list">
 <strong>
         Sources Used:
        </strong>
-       NREL (2013) for utility-scale PV land use of roughly 7–9 acres/MWac; Jacobson / Stanford land-footprint compilation for fossil plant direct land factors around 0.12 acres/MW for diesel and 0.11 acres/MW for natural gas; USDA Climate Hubs and USDA ARS for agrivoltaics keeping working lands productive and precision agriculture / soil testing improving input management; University of Arizona / Barron-Gafford agrivoltaic field study showing tomatoes 2×, chiltepin 3×, and jalapeños similar yield with 65% less transpirational water loss; Li et al., Agricultural Water Management (2021) for drip fertigation meta-analysis finding about +12% yield; and Herrmann et al. (2024) for placed starter fertilization meta-analysis finding about +9.4% yield, shown here as +9%.
+       NREL (2013) for utility-scale PV land use of roughly 7–9 acres/MWac; Jacobson / Stanford land-footprint compilation for fossil plant direct land factors around 0.12 acres/MW for diesel and 0.11 acres/MW for natural gas; USDA Climate Hubs and USDA ARS for agrivoltaics keeping working lands productive and precision agriculture / soil testing improving input management; University of Arizona / Barron-Gafford agrivoltaic field study showing tomatoes 2×, chiltepin 3×, and jalapeños similar yield with 65% less transpirational water loss; Li et al., Agricultural Water Management (2021) for drip fertigation meta-analysis finding about +12% yield; and Herrmann et al. (2024) for placed starter fertilization meta-analysis finding about +9.4% yield, shown here as +9%; EPA solar panel guidance for the statement that working panels are safe during use and encapsulated to prevent leaching; NREL PV module facts and trends for module construction, trace materials of concern, and damaged-module leaching research; and Cooperative Extension guidance for soil monitoring, stormwater control, fertilizer-care practices, and decommissioning planning on agricultural solar sites.
       </p>
 </div>
 <div aria-label="Corrected land-area exhibit scaled to the same 100 MW basis" class="land-area-exhibit" role="img">
@@ -1628,6 +1985,10 @@ section {
      ·
      <a href="crops.html">
       Crops
+     </a>
+     ·
+     <a href="#food-safety">
+      Food Safety
      </a>
      ·
      <a href="news.html">
